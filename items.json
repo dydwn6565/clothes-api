@@ -379,13 +379,8 @@
 
     "ranking":[{
             "search":{
-                "first": "short padding",
-                "second": "hoody",
-                "third": "neat",
-                "fourth": "mantoman",
-                "fifth": "coat",
-                "sixth": "padding",
-                "seventh": "jogger pants"
+                "first": ["short padding", "hoody","neat","mantoman","coat","padding","joggerpant"]
+ 
             },
             "pant":{
                 "first":"a",
