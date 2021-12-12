@@ -1,7 +1,7 @@
-{   "item":[{
+{   
 
 
-    "outer":[{
+    "outer":{
 
         "hoody":[{
             "id":0,
@@ -80,9 +80,9 @@
             "image":"https://image.msscdn.net/images/goods_img/20210204/1778408/1778408_1_125.jpg"
 
         }
-    ]
-    },
-    {
+    
+        ],
+    
 
         "cardigan":[{
         
@@ -186,12 +186,14 @@
     
 
 
-}]
-    }
+}
+]},
+
+
             
-         
-    ],
-    "pants":[{
+
+    
+    "pants":{
         "denim pants": [{
             "id":0,
             "brand":"topi",
@@ -269,9 +271,9 @@
             "image":"https://image.msscdn.net/images/goods_img/20190508/1037219/1037219_2_125.jpg"
 
         }
-    ]
-    },
-    {
+    ],
+    
+    
 
         "slacks":[{
         
@@ -377,8 +379,8 @@
 
 
 }]
-    }]
-}],
+    },
+
 
     "ranking":[{
             "search":{
