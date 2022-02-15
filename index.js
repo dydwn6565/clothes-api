@@ -1,17 +1,8 @@
-// const jsonServer = require("json-server");
-// const server = jsonServer.create();
-// const router = jsonServer.router("items.json");
-// const middlewares = jsonServer.defaults();
-// const port = process.env.PORT || 4000;
-
-// server.use(middlewares);
-// server.use(router);
-// server.listen(port);
-
 const express = require("express");
 const app = express();
 const items = require("./api/items");
-
+const cors = require("cors");
+app.use(cors());
 app.use(express.json({ extended: false }));
 
 app.use("/api/items", items);
