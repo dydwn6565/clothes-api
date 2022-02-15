@@ -108,6 +108,7 @@
     "ms": "^2.0.0",
     "nanoid": "^3.1.30",
     "negotiator": "^0.6.2",
+    "nodemon": "^2.0.15",
     "normalize-url": "^4.5.1",
     "object-assign": "^4.1.1",
     "on-finished": "^2.3.0",
@@ -176,11 +177,11 @@
     "yargs-parser": "^21.0.0",
     "yn": "^3.1.1"
   },
-  "engines":{
-    "node":"14.x"
+  "engines": {
+    "node": "14.x"
   },
   "scripts": {
-    "start":"node index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
