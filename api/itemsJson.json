@@ -363,21 +363,13 @@
     "inventory":[{"size":"27","quantity":70},{"size":"28","quantity":55},{"size":"29","quantity":45},{"size":"30","quantity":35}]
 }]
     },
-    "ranking":[{
-            "search":{
-                "first": ["short padding", "hoody","neat","mantoman","coat","padding","joggerpant"],
-                "recommend" :["hoody", "slacks","cardigan", "neat","jackets","short pants","long sleve","ring","ear ring","perfume"]
+    
+            "ranking":{
+                "2022/02/16": ["short padding", "hoody","neat","man to man","coat","padding","jogger pant","long sleeve","cardigan","jackets"]
+                
                 
             },
-            "pant":{
-                "first":"a",
-                "second":"b",
-                "third":"c",
-                "fourth":"d",
-                "fifth":"f",
-                "sixth":"g",
-                "seventh":"h",
-                "eighth":"i"
+            "recommand":{
+                "2022/02/16" :["hoody", "slacks","cardigan", "neat","jackets","short pants","long sleve","ring","ear ring","perfume","joggerpant","hoody"]
             }
-    }]
-}
+        }   
