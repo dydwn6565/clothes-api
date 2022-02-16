@@ -57,4 +57,22 @@ router.get("/pants/slacks", async (req, res) => {
   }
 });
 
+router.get("/ranking", async (req, res) => {
+  try {
+    res.json(items["ranking"]);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send("Server error");
+  }
+});
+
+router.get("/recommend", async (req, res) => {
+  try {
+    res.json(items["recommend"]);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send("Server error");
+  }
+});
+
 module.exports = router;
