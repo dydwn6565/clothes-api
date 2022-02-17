@@ -90,15 +90,21 @@ router.get("/searched", async (req, res) => {
     const matchedItemFromDenim = items.pants["denim pants"].filter((denim) =>
       denim.keyword.includes(...keywords)
     );
-    const matchedItemFromSlack = items.slacks.hoody.filter((slacks) =>
+    const matchedItemFromSlack = items.pants.slacks.filter((slacks) =>
       slacks.keyword.includes(...keywords)
     );
-
+    const searchedItemList = Object.assign(
+      matchedItemFromHoody,
+      matchedItemFromCardigan,
+      matchedItemFromDenim,
+      matchedItemFromSlack
+    );
+    console.log(searchedItemList);
     // console.log(items["outer"]["hoody"][0]);
     // console.log(items["outer"]["cardigan"].length);
     // console.log(items["pants"]["denim pants"].length);
     // console.log(items["pants"]["slacks"].length);
-    res.status(200).json(items);
+    res.status(200).json(searchedItemList);
   } catch (error) {
     console.log(error);
     return res.status(500).send("Server error");
