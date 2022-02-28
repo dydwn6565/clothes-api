@@ -77,9 +77,8 @@ router.get("/recommend", async (req, res) => {
 
 router.get("/searched", async (req, res) => {
   try {
-    // res.json(items["recommend"]);
     const keywords = req.query.keyword.split(",");
-    // console.log(items.outer.hoody[0].keyword.includes("gray"));
+
     const matchedItemFromHoody = items.outer.hoody.filter((hoody) =>
       hoody.keyword.includes(...keywords)
     );
@@ -99,16 +98,17 @@ router.get("/searched", async (req, res) => {
       matchedItemFromDenim,
       matchedItemFromSlack
     );
-    console.log(searchedItemList);
-    // console.log(items["outer"]["hoody"][0]);
-    // console.log(items["outer"]["cardigan"].length);
-    // console.log(items["pants"]["denim pants"].length);
-    // console.log(items["pants"]["slacks"].length);
+
     res.status(200).json(searchedItemList);
   } catch (error) {
     console.log(error);
     return res.status(500).send("Server error");
   }
+});
+
+router.post("/checkout", (req, res) => {
+  console.log(req.body);
+  // res.send({ success: success });
 });
 
 module.exports = router;
