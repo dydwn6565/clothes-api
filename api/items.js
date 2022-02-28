@@ -108,7 +108,7 @@ router.get("/searched", async (req, res) => {
 
 router.post("/checkout", (req, res) => {
   console.log(req.body);
-  // return res.send({ success: success });
+  return res.send({ success: success });
 });
 
 module.exports = router;
