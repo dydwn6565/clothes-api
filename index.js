@@ -3,7 +3,9 @@ const app = express();
 const items = require("./api/items");
 const cors = require("cors");
 const bodyparser = require("body-parser");
-const stripe = require("stripe")(process.env.STRIPE);
+const stripe = require("stripe")(
+  "sk_test_51KWFQPG6LrFQPHnX5IVqUFMV9ANjh2n6xoxaxFllzIveyHtJxgs40KYOxTVKMuTpRaWdrx4RiZ65aGY96IiOsUhA00GQXEfO4j"
+);
 const uuid = require("uuid").v4;
 
 app.use(cors());
