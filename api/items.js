@@ -2,7 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const router = express.Router();
 const items = require("./itemsJson.json");
-
+const uuid = require("uuid").v4;
+const stripe = require("stripe")(
+  "sk_test_51KWFQPG6LrFQPHnX5IVqUFMV9ANjh2n6xoxaxFllzIveyHtJxgs40KYOxTVKMuTpRaWdrx4RiZ65aGY96IiOsUhA00GQXEfO4j"
+);
 router.get("/", async (req, res) => {
   try {
     res.json(items);
@@ -106,9 +109,40 @@ router.get("/searched", async (req, res) => {
   }
 });
 
-router.post("/checkout", (req, res) => {
-  console.log(req.body);
-  return res.send({ success: "success" });
+router.post("/checkout", async (req, res) => {
+  console.log(req.body.items.orderState);
+  console.log("hit");
+  // return res.send({ success: "success" });
+  let error, status;
+  try {
+    const { product, token } = req.body;
+    const key = uuid();
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      mode: "payment",
+      success_url: "http://localhost:3000/confirm",
+      cancel_url: "http://localhost:3000/order",
+      line_items: req.body.items.orderState?.map((item) => {
+        return {
+          price_data: {
+            currency: "cad",
+            product_data: {
+              name: item.name,
+            },
+            unit_amount: item.discounted_price,
+          },
+          quantity: item.quantity,
+        };
+      }),
+    });
+
+    res.json({ url: session.url });
+    // console.log("Charge", { charge });
+    status: "success";
+  } catch (error) {
+    console.log(error);
+    status: "failure";
+  }
 });
 
 module.exports = router;
