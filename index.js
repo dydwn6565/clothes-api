@@ -6,7 +6,7 @@ const bodyparser = require("body-parser");
 
 
 
-app.use(cors({origin: "*"}));
+app.use(cors({ origin: "https://myshoppingmall.vercel.app/" }));
 app.use(express.json({ extended: false }));
 
 app.use(bodyparser.urlencoded({ extended: false }));
