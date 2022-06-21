@@ -4,8 +4,7 @@ const router = express.Router();
 const items = require("./itemsJson.json");
 const uuid = require("uuid").v4;
 
-const app = express()
-app.use(cors());
+
 const stripe = require("stripe")(
   "sk_test_51KWFQPG6LrFQPHnX5IVqUFMV9ANjh2n6xoxaxFllzIveyHtJxgs40KYOxTVKMuTpRaWdrx4RiZ65aGY96IiOsUhA00GQXEfO4j"
 );

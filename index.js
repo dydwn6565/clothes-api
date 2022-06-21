@@ -4,7 +4,6 @@ const items = require("./api/items");
 const cors = require("cors");
 const bodyparser = require("body-parser");
 
-const uuid = require("uuid").v4;
 
 app.use(cors());
 app.use(express.json({ extended: false }));
