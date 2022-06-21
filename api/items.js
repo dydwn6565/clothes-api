@@ -138,7 +138,7 @@ router.post("/checkout", async (req, res) => {
       }),
     });
 
-    res.json({ url: session.url });
+   return res.json({ url: session.url });
     // console.log("Charge", { charge });
     status: "success";
   } catch (error) {
