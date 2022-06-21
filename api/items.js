@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+
 const router = express.Router();
 const items = require("./itemsJson.json");
 const uuid = require("uuid").v4;
@@ -138,12 +138,12 @@ router.post("/checkout", async (req, res) => {
       }),
     });
 
-   return res.json({ url: session.url });
+   return res.status(200).send({ url: session.url });
     // console.log("Charge", { charge });
-    status: "success";
+    // status: "success";
   } catch (error) {
     console.log(error);
-    status: "failure";
+    // status: "failure";
   }
 });
 
