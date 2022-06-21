@@ -4,6 +4,7 @@ const router = express.Router();
 const items = require("./itemsJson.json");
 const uuid = require("uuid").v4;
 
+const app = express()
 app.use(cors());
 const stripe = require("stripe")(
   "sk_test_51KWFQPG6LrFQPHnX5IVqUFMV9ANjh2n6xoxaxFllzIveyHtJxgs40KYOxTVKMuTpRaWdrx4RiZ65aGY96IiOsUhA00GQXEfO4j"
@@ -112,7 +113,7 @@ router.get("/searched", async (req, res) => {
 });
 
 router.post("/checkout", async (req, res) => {
-  console.log(req.body.items.orderState);
+  console.log(parseInt(req.body.items.orderState[0].discounted_price));
   console.log("hit");
   // return res.send({ success: "success" });
   let error, status;
@@ -131,7 +132,7 @@ router.post("/checkout", async (req, res) => {
             product_data: {
               name: item.name,
             },
-            unit_amount: item.discounted_price,
+            unit_amount: item.discounted_price*100,
           },
           quantity: item.quantity,
         };
