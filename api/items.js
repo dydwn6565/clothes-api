@@ -122,8 +122,8 @@ router.post("/checkout", async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
-      success_url: "http://localhost:3000/confirm",
-      cancel_url: "http://localhost:3000/order",
+      success_url: "https://myshoppingmall.vercel.app//confirm",
+      cancel_url: "https://myshoppingmall.vercel.app//order",
       line_items: req.body.items.orderState?.map((item) => {
         return {
           price_data: {
@@ -131,7 +131,7 @@ router.post("/checkout", async (req, res) => {
             product_data: {
               name: item.name,
             },
-            unit_amount: item.discounted_price*100,
+            unit_amount: item.discounted_price * 100,
           },
           quantity: item.quantity,
         };
